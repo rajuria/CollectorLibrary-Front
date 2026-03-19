@@ -5,8 +5,13 @@ import heroImg from './assets/hero.png'
 import './App.css'
 import { OtroButton } from './components/button/button'
 
+import { AuthorPage } from './pages/AgregarAutor'
+import { BookPage } from './pages/AgregarLibro'
+
 function App() {
   const [count, setCount] = useState(0)
+  
+  const [currentForm, setCurrentForm] = useState(null)
 
   return (
     <>
@@ -31,6 +36,16 @@ function App() {
         >
           Count is {count}
         </button>
+        
+        <div style={{ display: 'flex', gap: '1rem', marginTop: '1rem', width: '100%' }}>
+          <div style={{ flex: 1, paddingLeft: '2rem' }}>
+            <AuthorPage />
+          </div>
+          <div style={{ flex: 1, paddingRight: '2rem', paddingBottom: '2rem' }}>
+            <BookPage />
+          </div>
+
+        </div>
       </section>
 
       <div className="ticks"></div>
